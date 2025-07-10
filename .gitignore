@@ -1,0 +1,11 @@
+venv/
+artifacts/raw
+artifacts/processed
+artifacts/model
+artifacts/weights
+artifacts/model_checkpoint
+__pycache__
+DEVOPS_PROJECT_2.egg-info/
+logs/
+.env
+.DS_Store
