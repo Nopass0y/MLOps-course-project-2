@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: ml-course-2-cluster
-        image: gcr.io/abstract-stage-463410-c5/my-dvc-project-course-2:latest
+        image: gcr.io/abstract-stage-463410-c5/my-project-course-2:latest
         ports:
         - containerPort: 5000  # Replace with the port your app listens on
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: ml-app-service
+  name: ml-course-2-cluster
 spec:
   type: LoadBalancer
   selector:
