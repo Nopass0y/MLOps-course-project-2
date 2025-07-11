@@ -13,8 +13,8 @@ spec:
         app: ml-app
     spec:
       containers:
-      - name: ml-app-container
-        image: gcr.io/mlops-new-447207/ml-project:latest
+      - name: ml-course-2-cluster
+        image: gcr.io/my-dvc-project-course-2:latest
         ports:
         - containerPort: 5000  # Replace with the port your app listens on
 ---
