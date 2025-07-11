@@ -6,16 +6,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 # Install system dependencies required by TensorFlow
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    pkg-config \             # Explicitly install pkg-config
+    pkg-config \  
     build-essential \
     libatlas-base-dev \
     libhdf5-dev \
     libprotobuf-dev \
     protobuf-compiler \
     python3-dev \
-    # Add any other specific dev libraries if your project needs them, e.g.,
-    # libssl-dev \
-    # libffi-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
