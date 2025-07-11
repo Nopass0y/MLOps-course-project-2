@@ -1,4 +1,4 @@
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ml-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ml-course-2-cluster
-        image: gcr.io/my-dvc-project-course-2:latest
+        image: gcr.io/abstract-stage-463410-c5/my-dvc-project-course-2:latest
         ports:
         - containerPort: 5000  # Replace with the port your app listens on
 ---
