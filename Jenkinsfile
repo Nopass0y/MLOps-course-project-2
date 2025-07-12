@@ -73,17 +73,11 @@ pipeline {
                     script{
                         echo 'Deploying to Kubernetes'
                         sh '''
-                        export PATH=$PATH:${GCLOUD_PATH}
-
+                        export PATH=$PATH:${GCLOUD_PATH}:${KUBECTL_AUTH_PLUGIN}
                         gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
-
                         gcloud config set project ${GCP_PROJECT}
-
-                        gcloud auth configure-docker --quiet
-
-                        docker build --platform linux/amd64 -t gcr.io/${GCP_PROJECT}/my-project-course-2:latest .
-
-                        docker push gcr.io/${GCP_PROJECT}/my-project-course-2:latest 
+                        gcloud container clusters get-credentials ml-course-2-cluster --region us-central1
+                        kubectl apply -f deployment.yaml
                         '''
                     }
                 }
